@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://8n302xntuqm7"]
+
+[ext_resource type="Texture2D" uid="uid://cvvxl4pf3kut5" path="res://player/spaceShip.png" id="1_xsp2p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_weoaa"]
+atlas = ExtResource("1_xsp2p")
+region = Rect2(26, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mn8od"]
+atlas = ExtResource("1_xsp2p")
+region = Rect2(52, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfajp"]
+atlas = ExtResource("1_xsp2p")
+region = Rect2(78, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80nbt"]
+atlas = ExtResource("1_xsp2p")
+region = Rect2(104, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmaxk"]
+atlas = ExtResource("1_xsp2p")
+region = Rect2(130, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2o8aj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_weoaa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mn8od")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfajp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80nbt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmaxk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="RigidBody2D" type="RigidBody2D"]
+gravity_scale = 0.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2o8aj")
