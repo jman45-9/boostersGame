@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://8n302xntuqm7"]
+[gd_scene load_steps=12 format=3 uid="uid://8n302xntuqm7"]
 
 [ext_resource type="Script" path="res://player/player.cs" id="1_2lc8g"]
 [ext_resource type="Texture2D" uid="uid://cvvxl4pf3kut5" path="res://player/spaceShip.png" id="1_xsp2p"]
@@ -26,6 +26,14 @@ region = Rect2(104, 0, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_hnbcp"]
 atlas = ExtResource("1_xsp2p")
 region = Rect2(130, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur5xe"]
+atlas = ExtResource("1_xsp2p")
+region = Rect2(208, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbgym"]
+atlas = ExtResource("1_xsp2p")
+region = Rect2(234, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2o8aj"]
 animations = [{
@@ -56,6 +64,17 @@ animations = [{
 "loop": true,
 "name": &"fwd",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur5xe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbgym")
+}],
+"loop": true,
+"name": &"turnL",
+"speed": 5.0
 }]
 
 [node name="player" type="CharacterBody2D"]
@@ -65,4 +84,4 @@ script = ExtResource("1_2lc8g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2o8aj")
-animation = &"fwd"
+animation = &"turnL"
